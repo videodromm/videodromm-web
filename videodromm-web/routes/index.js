@@ -1,30 +1,22 @@
 ﻿var express = require('express');
 var router = express.Router();
-const fs = require('fs');
-/* GET communes listing. */
+//const fs = require('fs');
+
 router.get('/', function (req, res) {
-	getCommunes(res);
+	res.send('respond with a resource');
+	//getHtmlFromFile(res);
 });
-function getCommunes(res) {
-	fs.readFile('./public/data/communes.json', (err, data) => {
+/*function getHtmlFromFile(res) {
+	fs.readFile('./public/html/the_force.html', (err, data) => {
 		if (err) return hadError(err, res);
-		getTemplate(JSON.parse(data.toString()), res);
+		const html = data.toString();
+		res.writeHead(200, { 'Content-Type': 'text/html' });
+		res.end(html);
 	});
-}
-function getTemplate(communes, res) {
-	fs.readFile('./public/html/communes.html', (err, data) => {
-		if (err) return hadError(err, res);
-		formatHtml(communes, data.toString(), res);
-	});
-}
-function formatHtml(communes, tmpl, res) {
-	const html = tmpl.replace('%', communes.join('</li><li>'));
-	res.writeHead(200, { 'Content-Type': 'text/html' });
-	res.end(html);
 }
 function hadError(err, res) {
 	console.error(err);
-	res.end('Server Error');
-}
+	res.end('Server Error' + err);
+}*/
 
 module.exports = router;
