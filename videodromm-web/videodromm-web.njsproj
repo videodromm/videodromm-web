@@ -81,7 +81,7 @@
     <Content Include="public\css\jquery-ui.structure.min.css" />
     <Content Include="public\css\jquery-ui.theme.min.css" />
     <Content Include="public\css\style.css" />
-    <Content Include="public\html\the_force.html" />
+    <Content Include="public\the_force.html" />
     <Content Include="public\images\colorCorrectOff.png" />
     <Content Include="public\images\colorCorrectOn.png" />
     <Content Include="public\images\cursor.png" />
