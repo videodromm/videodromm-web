@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>anim test</title>
+	  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+</head>
+<body>
+<canvas id="c" width="300" height="300"></canvas>
+<script type="text/javascript">
+  var socket = io('http://videodromm.azurewebsites.net:1337');
+
+
+var canvas = document.getElementById('c');
+var context = canvas.getContext('2d');
+var dx= 4;
+var dy=4;
+var y=150;
+var x=10;
+function draw(){
+
+	context.clearRect(0,0,300,300);
+	context.beginPath();
+	context.fillStyle="#00FF00";
+	context.arc(x,y,20,0,Math.PI*2,true);
+	context.closePath();
+	context.fill();
+	if( x<0 || x>300)
+	dx=-dx;
+	if( y<0 || y>300)
+		dy=-dy;
+		x+=dx;
+		y+=dy;
+  var imgData = canvas.toDataURL("image/webp");
+socket.emit('msg',imgData);
+
+    window.requestAnimationFrame(draw)
+	}
+draw();
+
+
+</script>
+</body>
+</html>

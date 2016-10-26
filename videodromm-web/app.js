@@ -1,4 +1,7 @@
 ﻿var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,8 +11,22 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
-
+var io = require('socket.io')(server);
+var port = process.env.PORT || 3000;
+// socket server
+console.log('ws srv');
+io.sockets.on('connection', function (socket) {
+	console.log('cnx');
+	
+	socket.on('msg', function (msg) {
+		console.log(msg);
+		socket.broadcast.emit('message', msg);
+	});
+	
+	socket.on('disconnect', function () {
+		io.sockets.emit('user disconnected');
+	});
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

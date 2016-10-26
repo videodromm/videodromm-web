@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\ggvserver\main.js" />
     <Compile Include="public\js\openGL.js" />
     <Compile Include="public\js\oscManager.js" />
     <Compile Include="public\js\pageGlobals.js" />
@@ -56,12 +57,17 @@
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
+    <Compile Include="server.js" />
     <Compile Include="UnitTest.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Compile>
     <Content Include="package.json" />
-    <Content Include="public\favicon.ico" />
+    <Content Include="public\a.html" />
+    <Content Include="public\client.html" />
+    <Content Include="public\favicon.ico">
+      <Publish>True</Publish>
+    </Content>
     <Content Include="public\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="public\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
     <Content Include="public\css\images\ui-bg_gloss-wave_16_121212_500x100.png" />
@@ -81,46 +87,130 @@
     <Content Include="public\css\jquery-ui.structure.min.css" />
     <Content Include="public\css\jquery-ui.theme.min.css" />
     <Content Include="public\css\style.css" />
-    <Content Include="public\the_force.html" />
-    <Content Include="public\images\colorCorrectOff.png" />
-    <Content Include="public\images\colorCorrectOn.png" />
-    <Content Include="public\images\cursor.png" />
-    <Content Include="public\images\debugOff.png" />
-    <Content Include="public\images\debugOn.png" />
-    <Content Include="public\images\favicon.ico" />
-    <Content Include="public\images\favicon.png" />
-    <Content Include="public\images\fullscreen.png" />
-    <Content Include="public\images\functionsOff.png" />
-    <Content Include="public\images\functionsOn.png" />
-    <Content Include="public\images\micOff.png" />
-    <Content Include="public\images\micOn.png" />
-    <Content Include="public\images\multi.png" />
-    <Content Include="public\images\multiOff.png" />
-    <Content Include="public\images\multiOn.png" />
-    <Content Include="public\images\networkOff.png" />
-    <Content Include="public\images\networkOn.png" />
-    <Content Include="public\images\open.png" />
-    <Content Include="public\images\pause.png" />
-    <Content Include="public\images\play.png" />
-    <Content Include="public\images\save.png" />
-    <Content Include="public\images\saveImage.png" />
-    <Content Include="public\images\test.jpg" />
-    <Content Include="public\images\textureOff.png" />
-    <Content Include="public\images\textureOn.png" />
-    <Content Include="public\presets\noisebw.png" />
-    <Content Include="public\presets\noisecolor.png" />
-    <Content Include="public\presets\nyan.png" />
-    <Content Include="public\presets\previz\audio.png" />
-    <Content Include="public\presets\previz\keyboard.png" />
-    <Content Include="public\presets\previz\noisebw.png" />
-    <Content Include="public\presets\previz\noisecolor.png" />
-    <Content Include="public\presets\previz\nyanIcon.png" />
-    <Content Include="public\presets\previz\void.png" />
-    <Content Include="public\presets\previz\webcam.png" />
-    <Content Include="public\shaders\draw.vert" />
-    <Content Include="public\shaders\header.frag" />
-    <Content Include="public\shaders\screen.frag" />
-    <Content Include="public\shaders\screen.vert" />
+    <Content Include="public\ggvserver\package.json" />
+    <Content Include="public\stylesheets\style.css">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\the_force.html">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\colorCorrectOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\colorCorrectOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\cursor.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\debugOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\debugOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\favicon.ico">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\favicon.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\fullscreen.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\functionsOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\functionsOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\micOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\micOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\multi.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\multiOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\multiOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\networkOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\networkOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\open.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\pause.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\play.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\save.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\saveImage.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\test.jpg">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\textureOff.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\images\textureOn.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\noisebw.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\noisecolor.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\nyan.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\audio.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\keyboard.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\noisebw.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\noisecolor.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\nyanIcon.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\void.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\presets\previz\webcam.png">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\shaders\draw.vert">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\shaders\header.frag">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\shaders\screen.frag">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="public\shaders\screen.vert">
+      <Publish>True</Publish>
+    </Content>
     <Content Include="public\stylesheets\style.styl" />
     <None Include="videodromm - Web Deploy.pubxml" />
     <Content Include="views\index.jade" />
@@ -131,6 +221,7 @@
     <Folder Include="bin\" />
     <Folder Include="public\" />
     <Folder Include="public\css\images\" />
+    <Folder Include="public\ggvserver\" />
     <Folder Include="public\lib\" />
     <Folder Include="public\css\" />
     <Folder Include="public\js\" />
