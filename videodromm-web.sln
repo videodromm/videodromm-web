@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "videodromm-web", "videodromm-web\videodromm-web.njsproj", "{1544C93B-6784-434B-8A69-C0D08713D69F}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "videodromm-web", "videodromm-web.njsproj", "{1544C93B-6784-434B-8A69-C0D08713D69F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
