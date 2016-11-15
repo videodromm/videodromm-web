@@ -42,7 +42,8 @@ Code, than commit and push to your fork then do a pull request.
 
 ######Roadmap
 - [ ] Websocket client for netdromm server https://github.com/videodromm/netdromm
-- [ ] Authentication
-- [ ] Library of shaders
-- [ ] Library of images (jpg/png)
+- [ ] Authentication (on the server, passport? )
+- [ ] Library of shaders (React)
+- [ ] Library of images (jpg/png) (React)
+- [ ] Build a React UI to control the remote clients via netdromm websocket server
 - [ ] Reactify the glsleditor 
